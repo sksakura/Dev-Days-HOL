@@ -42,7 +42,7 @@ namespace MyEvents.ViewModels
                 IsBusy = true;
 
                 //TODO: Get Sessions data from Azure.
-                var items = new List<Session>();
+                var items = await App.DataManager.GetSessionsAsync();
 
                 //Load sessions into list
                 Sessions.Clear();

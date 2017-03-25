@@ -20,7 +20,6 @@ namespace MyEvents.Cloud
 
         private AzureDataManager()
         {
-            if (App.IsMobileServiceConfigured)
                 Initialize();
         }
 
@@ -140,10 +139,14 @@ namespace MyEvents.Cloud
             return await GetItemsAsync<Speaker>();
         }
 
-        //TODO: Implment SaveSpeakerAsync method here
-     
-    #endregion
+        public async Task SaveSpeakerAsync(Speaker speaker)
+        {
+            await SaveItemAsync<Speaker>(speaker);
+        }
+        
+
+        #endregion
 
 
-}
+    }
 }

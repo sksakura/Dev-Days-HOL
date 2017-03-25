@@ -12,7 +12,7 @@ namespace MyEvents
     public partial class App : Application
     {
         public static IDataManager DataManager = AzureDataManager.DefaultManager;
-        public static bool IsMobileServiceConfigured { get; set; } = Constants.ApplicationURL != "https://<yourappservicename>.azurewebsites.net";
+        public static bool IsMobileServiceConfigured { get; set; } = Constants.ApplicationURL != "https://sksdevdays.azurewebsites.net";
 
         public App()
         {

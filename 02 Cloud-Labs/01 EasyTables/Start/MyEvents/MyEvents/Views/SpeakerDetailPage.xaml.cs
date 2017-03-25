@@ -29,7 +29,7 @@ namespace MyEvents.Views
         {
             speaker.Title = EntryTitle.Text;
             //TODO: Uncomment this when
-            //await vm.UpdateSpeaker(speaker);
+            await vm.UpdateSpeaker(speaker);
             await Navigation.PopAsync();
         }
     }

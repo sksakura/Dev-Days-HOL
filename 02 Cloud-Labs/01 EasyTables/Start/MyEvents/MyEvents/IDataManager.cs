@@ -12,6 +12,6 @@ namespace MyEvents
         Task<IEnumerable<Session>> GetSessionsAsync();
         Task<IEnumerable<Speaker>> GetSpeakersAsync();
 
-        //TODO: ADD SaveSpeakerAsync() here
+        Task SaveSpeakerAsync(Speaker speaker);
     }
 }

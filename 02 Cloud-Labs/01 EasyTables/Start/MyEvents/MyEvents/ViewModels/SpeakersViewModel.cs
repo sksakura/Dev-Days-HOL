@@ -28,7 +28,11 @@ namespace MyEvents.ViewModels
                 () => !IsBusy);
         }
 
-        //TODO: ADD UpdateSpeaker() here
+        public async Task UpdateSpeaker(Speaker speaker)
+        {
+            await App.DataManager.SaveSpeakerAsync(speaker);
+            RefreshCommand.Execute(null);
+        }
 
         async Task GetSpeakers()
         {
@@ -39,9 +43,9 @@ namespace MyEvents.ViewModels
             try
             {
                 IsBusy = true;
-                
+
                 // TODO: Get data from Azure.
-                var items = new List<Speaker> ();
+                var items = await App.DataManager.GetSpeakersAsync();
 
                 Speakers.Clear();
                 foreach (var item in items)
