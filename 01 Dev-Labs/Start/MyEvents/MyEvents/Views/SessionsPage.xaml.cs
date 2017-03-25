@@ -17,6 +17,18 @@ namespace MyEvents.Views
             InitializeComponent();
         }
 
+        async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
+        {
+            var item = args.SelectedItem as Session;
+            if (item == null)
+                return;
+
+            await Navigation.PushAsync(new SessionDetailPage() { BindingContext = new SessionDetailViewModel(item) });
+
+            // Manually deselect item
+            SessionsListView.SelectedItem = null;
+        }
+
         public SessionsViewModel ViewModel { get { return (BindingContext as SessionsViewModel); } }
 
         // Add OnItemSelected event handler here

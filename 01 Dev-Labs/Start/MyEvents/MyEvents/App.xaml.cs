@@ -18,13 +18,23 @@ namespace MyEvents
             var sessionsPage = new NavigationPage(new SessionsPage()) { Title = "Sessions" };
             // declare speakersPage here
             var aboutPage = new NavigationPage(new AboutPage()) { Title = "About" };
+            //dev speakersPage
+            var speakersPage = new NavigationPage(new SpeakersPage()) { Title = "Speakers" };
 
             mainPage.Children.Add(sessionsPage);
             //add speakersPage here
+            //dev add speakers page
+            mainPage.Children.Add(speakersPage);
             mainPage.Children.Add(aboutPage);
 
-
             MainPage = mainPage;
+
+            Device.OnPlatform(iOS: () => {
+                sessionsPage.Icon = "tab_feed.png";
+                speakersPage.Icon = "tab_person.png";
+                aboutPage.Icon = "tab_about.png";
+
+            });
         }
 
         protected override void OnStart()

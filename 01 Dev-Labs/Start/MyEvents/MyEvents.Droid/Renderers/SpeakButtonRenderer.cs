@@ -28,5 +28,6 @@ namespace MyEvents.Droid.Renderers
                 Control.SetCompoundDrawablesWithIntrinsicBounds(0, Resource.Drawable.speakerphone, 0, 0);
             }
         }
+
     }
 }

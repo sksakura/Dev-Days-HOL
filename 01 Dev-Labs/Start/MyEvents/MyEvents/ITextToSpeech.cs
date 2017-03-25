@@ -9,5 +9,8 @@ namespace MyEvents
     public interface ITextToSpeech
     {
         // Define the Speak method
+
+            void Speak(string text);
+      
     }
 }
